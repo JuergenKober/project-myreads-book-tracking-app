@@ -10,12 +10,17 @@ const Book = props => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${props.book.imageurl})`
+              backgroundImage: `url(${props.book.imageLinks.thumbnail})`
             }}></div>
           <ShelfChanger />
         </div>
         <div className="book-title">{props.book.title}</div>
-        <div className="book-authors">{props.book.author}</div>
+        {props.book.authors &&
+          props.book.authors.map((author, index) => (
+            <div className="book-authors" key={index}>
+              {author}
+            </div>
+        ))}
       </div>
     </li>
   )
