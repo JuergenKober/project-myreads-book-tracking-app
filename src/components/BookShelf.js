@@ -62,9 +62,24 @@ const BookShelf = props => {
       </div>
       <div className="list-books-content">
         <div>
-          <ShelfCompartment compartment={compartments.currentlyReading} />
-          <ShelfCompartment compartment={compartments.wantToRead} />
-          <ShelfCompartment compartment={compartments.read} />
+          <ShelfCompartment
+            compartment={compartments.currentlyReading}
+            books={props.books.filter(
+              book => book.shelf === "currentlyReading"
+            )}
+          />
+          <ShelfCompartment
+            compartment={compartments.wantToRead}
+            books={props.books.filter(
+              book => book.shelf === "wantToRead"
+            )}
+          />
+          <ShelfCompartment
+            compartment={compartments.read}
+            books={props.books.filter(
+              book => book.shelf === "read"
+            )}
+          />
         </div>
       </div>
       <div className="open-search">
