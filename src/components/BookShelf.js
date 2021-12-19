@@ -67,18 +67,21 @@ const BookShelf = props => {
             books={props.books.filter(
               book => book.shelf === "currentlyReading"
             )}
+            changeShelf={props.changeShelf}
           />
           <ShelfCompartment
             compartment={compartments.wantToRead}
             books={props.books.filter(
               book => book.shelf === "wantToRead"
             )}
+            changeShelf={props.changeShelf}
           />
           <ShelfCompartment
             compartment={compartments.read}
             books={props.books.filter(
               book => book.shelf === "read"
             )}
+            changeShelf={props.changeShelf}
           />
         </div>
       </div>

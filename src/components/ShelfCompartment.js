@@ -9,7 +9,11 @@ const ShelfCompartment = props => {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {props.books.map((book, index) => (
-            <Book key={index} book={book} />
+            <Book
+              key={index}
+              book={book}
+              changeShelf={props.changeShelf}
+            />
           ))}
         </ol>
       </div>
