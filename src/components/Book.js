@@ -10,7 +10,7 @@ const Book = props => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${props.book.imageLinks.thumbnail})`
+              backgroundImage: `url(${props.book.imageLinks && props.book.imageLinks.thumbnail})`
             }}></div>
           <ShelfChanger
             currentShelf={props.book.shelf}
