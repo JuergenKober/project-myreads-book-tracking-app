@@ -50,7 +50,9 @@ class BooksApp extends React.Component {
               exact
               path="/search"
               element={
-                <SearchPage />
+                <SearchPage
+                  changeShelf={this.changeShelf}
+                />
               }
             />
 
