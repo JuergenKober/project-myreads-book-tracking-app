@@ -13,6 +13,7 @@ const ShelfCompartment = props => {
               key={index}
               book={book}
               changeShelf={props.changeShelf}
+              currentShelf={book.shelf}
             />
           ))}
         </ol>

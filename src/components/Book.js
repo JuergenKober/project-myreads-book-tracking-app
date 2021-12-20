@@ -13,7 +13,7 @@ const Book = props => {
               backgroundImage: `url(${props.book.imageLinks && props.book.imageLinks.thumbnail})`
             }}></div>
           <ShelfChanger
-            currentShelf={props.book.shelf}
+            currentShelf={props.currentShelf}
             changeShelf={props.changeShelf}
             book={props.book}
           />
