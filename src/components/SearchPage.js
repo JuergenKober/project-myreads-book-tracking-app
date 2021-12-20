@@ -56,6 +56,7 @@ class SearchPage extends React.Component {
                 key={index}
                 book={book}
                 changeShelf={this.props.changeShelf}
+                currentShelf='none'
               />
             ))}
           </ol>
