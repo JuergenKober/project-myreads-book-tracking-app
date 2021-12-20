@@ -17,6 +17,8 @@ class SearchPage extends React.Component {
           ? this.setState({ books: books })
           : this.setState({ books: [] });
       });
+    } else {
+      this.setState({ books: [] });
     }
   };
 
