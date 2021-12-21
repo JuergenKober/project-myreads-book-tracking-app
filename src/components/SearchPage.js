@@ -5,14 +5,14 @@ import Book from './Book';
 
 class SearchPage extends React.Component {
   state = {
-    books: []
+    books: [],
   };
 
   searchBooks = event => {
     const query = event.target.value;
     const booksOnShelf = this.props.books;
 
-    if (query) {
+    if (query.length > 0) {
       BooksAPI.search(query).then(booklist => {
         if (booklist.length > 0) {
           booklist.forEach((book, index) => {
