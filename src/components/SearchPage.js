@@ -11,23 +11,20 @@ class SearchPage extends React.Component {
   searchBooks = event => {
     const query = event.target.value;
     const booksOnShelf = this.props.books;
-    //console.log(booksOnShelf);
 
     if (query) {
       BooksAPI.search(query).then(booklist => {
         if (booklist.length > 0) {
           booklist.forEach((book, index) => {
-            //console.log(books[index].id);
+
             const listedBook = booksOnShelf.find(
               elem => elem.id === book.id
             );
-            if (listedBook) {console.log('listed book: ', listedBook)}
             listedBook
               ? book.shelf = listedBook.shelf
               : book.shelf = 'none';
           })
           this.setState({ books: booklist });
-          //console.log(booksOnShelf);
         }
       });
     } else {
@@ -38,8 +35,6 @@ class SearchPage extends React.Component {
   render() {
     const { books } = this.state;
 
-    //console.log('books found: ', books.length);
-    //console.log(books)
     return (
       <div className="search-books">
         <div className="search-books-bar">

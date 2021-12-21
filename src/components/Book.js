@@ -20,9 +20,6 @@ const Book = props => {
         </div>
         <div className="book-title">
           {props.book.title}
-          <br />{props.book.id}
-          <br />{props.book.shelf}
-          <br />{props.currentShelf}
         </div>
         {props.book.authors &&
           props.book.authors.map((author, index) => (
