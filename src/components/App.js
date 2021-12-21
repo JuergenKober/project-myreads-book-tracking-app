@@ -51,6 +51,7 @@ class BooksApp extends React.Component {
               path="/search"
               element={
                 <SearchPage
+                  books={this.state.books}
                   changeShelf={this.changeShelf}
                 />
               }
