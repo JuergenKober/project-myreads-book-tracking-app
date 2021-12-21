@@ -14,21 +14,20 @@ class SearchPage extends React.Component {
     //console.log(booksOnShelf);
 
     if (query) {
-      BooksAPI.search(query).then(books => {
-        if (books.length > 0) {
-          books.forEach((book, index) => {
+      BooksAPI.search(query).then(booklist => {
+        if (booklist.length > 0) {
+          booklist.forEach((book, index) => {
             //console.log(books[index].id);
             const listedBook = booksOnShelf.find(
               elem => elem.id === book.id
             );
+            if (listedBook) {console.log('listed book: ', listedBook)}
             listedBook
               ? book.shelf = listedBook.shelf
               : book.shelf = 'none';
           })
-          this.setState({ books: books });
-          console.log(this.state.books);
-        } else {
-          this.setState({ books: [] });
+          this.setState({ books: booklist });
+          //console.log(booksOnShelf);
         }
       });
     } else {
