@@ -2,7 +2,6 @@ import React from 'react';
 import Book from './Book';
 
 const ShelfCompartment = props => {
-  console.log(props.books);
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{props.compartment.title}</h2>
