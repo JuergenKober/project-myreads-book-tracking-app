@@ -18,7 +18,11 @@ const Book = props => {
             book={props.book}
           />
         </div>
-        <div className="book-title">{props.book.title}</div>
+        <div className="book-title">
+          {props.book.title}
+          <br />{props.book.id}
+          <br />{props.book.shelf}
+        </div>
         {props.book.authors &&
           props.book.authors.map((author, index) => (
             <div className="book-authors" key={index}>

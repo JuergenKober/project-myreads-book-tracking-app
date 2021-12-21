@@ -25,7 +25,8 @@ class SearchPage extends React.Component {
               ? book.shelf = listedBook.shelf
               : book.shelf = 'none';
           })
-          this.setState({ books: books })
+          this.setState({ books: books });
+          console.log(this.state.books);
         } else {
           this.setState({ books: [] });
         }
