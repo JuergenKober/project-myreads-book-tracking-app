@@ -5,12 +5,17 @@ import Book from './Book';
 
 class SearchPage extends React.Component {
   state = {
+    query: '',
     books: [],
   };
 
-  searchBooks = event => {
-    const query = event.target.value;
-    const booksOnShelf = this.props.books;
+  updateQuery = (query) => {
+    this.setState({ query: query })
+  }
+
+  searchBooks = (query, booksOnShelf) => {
+    //const { query } = this.state;
+    //const booksOnShelf = this.props.books;
 
     if (query.length > 0) {
       BooksAPI.search(query).then(booklist => {
@@ -33,7 +38,7 @@ class SearchPage extends React.Component {
   };
 
   render() {
-    const { books } = this.state;
+    const { books, query } = this.state;
 
     return (
       <div className="search-books">
@@ -56,7 +61,8 @@ class SearchPage extends React.Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              onChange={this.searchBooks}
+              value={query}
+              onChange={(event) => this.updateQuery(event.target.value)}
             />
 
           </div>
