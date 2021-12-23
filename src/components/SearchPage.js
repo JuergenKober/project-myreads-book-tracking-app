@@ -13,35 +13,10 @@ class SearchPage extends React.Component {
     this.setState({ query: query })
   }
 
-  searchBooks = (query, booksOnShelf) => {
-    //const { query } = this.state;
-    //const booksOnShelf = this.props.books;
-
-    if (query.length > 0) {
-      BooksAPI.search(query).then(booklist => {
-        if (booklist.length > 0) {
-          booklist.forEach((book, index) => {
-
-            const listedBook = booksOnShelf.find(
-              elem => elem.id === book.id
-            );
-            listedBook
-              ? book.shelf = listedBook.shelf
-              : book.shelf = 'none';
-          })
-          this.setState({ books: booklist });
-        }
-      });
-    } else {
-      this.setState({ books: [] });
-    }
-  };
-
   componentDidUpdate(prevProps, prevState) {
 
     const { query } = this.state;
     const booksOnShelf = this.props.books;
-    console.log(query);
 
      if(prevState.query !== this.state.query){
        if (query.length > 0) {
@@ -62,7 +37,6 @@ class SearchPage extends React.Component {
       }
       this.setState({ books: [] });
     }
-    console.log(this.state.books);
   }
 
   render() {
