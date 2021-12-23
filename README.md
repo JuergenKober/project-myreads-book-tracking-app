@@ -2,16 +2,25 @@
 
 ## Introduction
 
+The MyReads project is based on the starter template for the final assessment project for Udacity's React Fundamentals course. It contains a bookshelf app that allows users to categorize books in different shelves and add new books to the shelves.
+
+The entry page of the page displays the books that are already categorized in a shelf. The user has three shelves available for books he's currently reading, wants to read or has read. Books can be moved between the shelves by a drop down menu for each book.
+
+The user can click a button on the main page and navigate to a search page. On this page he can search for more books by entering search terms into a form field. Books found by the search can be categorized like the books on the main page.
+
+If the user goes back to the main page by a provided button the newly categorized books appear on the respective shelves.
+
+
 ## How to Use
 
-* Clone this repo with `git clone https://github.com/carlo-bruno/udacity-fend-project-myreads.git`
+* Clone this repo with `git clone https://github.com/carlo-bruno/udacity-fend-project-myreads.git
 * Go to the application folder and install all project dependencies with `npm install`
 * Start start the application with `npm start`
 
 
 ## Udacity MyReads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+This project is based on the starter template for the final assessment project for Udacity's React Fundamentals course hosted at https://github.com/udacity/reactnd-project-myreads-starter. The goal of the starter template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
 
